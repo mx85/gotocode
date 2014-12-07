@@ -1,0 +1,49 @@
+<idea-plugin version="2">
+  <id>com.mx85.gotocode</id>
+  <name>GotoCode</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      A simple plugin for sending a command to another remote instance of IntelliJ (e.g. your college´s) so
+      that the other instance opens up the the same file with the cursor at the same line as in the sender´s document.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="GotoCodeSettingsAction" class="com.mx85.gotocode.GotoCodeSettingsAction" text="Goto _Code" icon="icon.png">
+          <add-to-group group-id="MainToolBar" anchor="after" relative-to-action="HelpTopics"/>
+      </action>
+      <action id="GotoCodeClientAction" class="com.mx85.gotocode.GotoCodeClientAction" text="GotoCode _Client" icon="icon.png">
+          <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      </action>
+  </actions>
+
+</idea-plugin>
